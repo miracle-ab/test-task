@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app-component/app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NotAuthorizedGuard } from './core/guards/not-authorized.guard';
+import { AuthorizedGuard } from './core/guards/authorized.guard';
 
 @NgModule({
   declarations: [
@@ -10,9 +13,13 @@ import { AppComponent } from './app-component/app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    NotAuthorizedGuard,
+    AuthorizedGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

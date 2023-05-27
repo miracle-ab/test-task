@@ -1,0 +1,61 @@
+<div class="auth-container">
+  <div class="auth-wrapper">
+    <form
+      class="auth-layout__form"
+      [formGroup]="authForm"
+      (ngSubmit)="sendForm()"
+    >
+      <mat-form-field class="auth-layout__username-field">
+        <mat-label>Username</mat-label>
+        <input formControlName="username" matInput type="text" />
+      </mat-form-field>
+
+      <mat-error
+        *ngIf="
+          authForm.get('username')?.invalid &&
+          (authForm.get('username')?.dirty || authForm.get('username')?.touched)
+        "
+        class="form-text text-danger"
+      >
+        <mat-error *ngIf="authForm.get('username')?.errors?.['required']">
+          Field is required
+        </mat-error>
+        <mat-error *ngIf="authForm.get('username')?.errors?.['pattern']">
+          The provided username is invalid
+        </mat-error>
+      </mat-error>
+
+      <mat-form-field class="auth-layout__password-field">
+        <mat-label>Password</mat-label>
+        <input formControlName="password" matInput type="password" />
+      </mat-form-field>
+
+      <mat-error
+        *ngIf="
+          authForm.get('password')?.invalid &&
+          (authForm.get('password')?.dirty || authForm.get('password')?.touched)
+        "
+        class="form-text text-danger"
+      >
+        <mat-error *ngIf="authForm.get('password')?.errors?.['required']">
+          Field is required
+        </mat-error>
+        <mat-error *ngIf="authForm.get('password')?.errors?.['pattern']">
+          Minimum eight characters, at least one uppercase letter, one lowercase
+          letter, one number and one special character <br />Password can't
+          contain whitespace
+        </mat-error>
+      </mat-error>
+
+      <button
+        class="auth-layout__auth-button"
+        type="submit"
+        mat-flat-button
+        color="primary"
+        [disabled]="authForm.invalid"
+      >
+        Login
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<mat-drawer-container class="home-layout__container">
+  <mat-drawer class="home-layout__drawer" mode="side" opened>
+    <h1 class="home-layout__title">Test Task</h1>
+    <p class="home-layout__menu-name">Navigation</p>
+    <ul class="home-layout__menu">
+      <li
+        class="home-layout__menu-item"
+        [routerLink]="['/' + ROUTES.OFFERS_ROUTH]"
+        [class.active]="isActiveRoute(ROUTES.OFFERS_ROUTH)"
+      >
+        Offers
+      </li>
+      <li
+        class="home-layout__menu-item"
+        [routerLink]="['/' + ROUTES.CATEGORIES_ROUTH]"
+        [class.active]="isActiveRoute(ROUTES.CATEGORIES_ROUTH)"
+      >
+        Categories
+      </li>
+      <li
+        class="home-layout__menu-item"
+        [routerLink]="['/' + ROUTES.APPLICATIONS_ROUTH]"
+        [class.active]="isActiveRoute(ROUTES.APPLICATIONS_ROUTH)"
+      >
+        Applications
+      </li>
+    </ul>
+
+    <p class="home-layout__menu-name">Settings</p>
+    <!-- <ul class="home-layout__menu">
+      <li class="home-layout__menu-item logout-menu-item" (click)="logout()">
+        <mat-icon class="home-layout__image"></mat-icon>
+        Logout
+      </li>
+    </ul> -->
+  </mat-drawer>
+  <mat-drawer-content class="home-layout__drawer-content">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

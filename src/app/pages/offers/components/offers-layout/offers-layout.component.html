@@ -1,1 +1,19 @@
-<p>offers-layout works!</p>
+<header class="offers-list-layout__header">
+  <h3 class="offers-heading__title">Offers</h3>
+  <div class="offers-list-layout__header-container">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="createUpdateOfferModal()"
+    >
+      Create offer
+    </button>
+  </div>
+</header>
+<main>
+  <app-offers-list-table
+    [tableData]="tableData"
+    (updateOfferById)="updateOfferById($event)"
+    (deleteOfferById)="deleteOfferById($event)"
+  ></app-offers-list-table>
+</main>

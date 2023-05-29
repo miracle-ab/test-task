@@ -1,0 +1,108 @@
+.table__paginator-container {
+  position: relative;
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  box-sizing: border-box;
+
+  .table__container {
+    overflow: auto;
+
+    .table {
+      color: #333;
+      width: 100%;
+      box-shadow: none;
+      box-sizing: border-box;
+
+      .table__column-content,
+      .table__column-header {
+        cursor: default;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 22px;
+        color: #9b9b9b;
+        word-break: break-word;
+
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-right: 10px;
+        box-sizing: border-box;
+      }
+
+      .table__column-header {
+        font-weight: 500;
+        vertical-align: top;
+      }
+
+      .table__column-content {
+        vertical-align: top;
+      }
+
+      .table__table-row,
+      .table__table-row-header {
+        height: auto;
+        box-sizing: border-box;
+      }
+
+      .link {
+        &:hover {
+          cursor: pointer;
+          font-size: 15px;
+          line-height: 22px;
+          color: #0a7aff;
+        }
+      }
+
+      .selected-text {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 22px;
+        color: #333;
+        display: flex;
+      }
+
+      .selected-text-description {
+        color: #9b9b9b;
+      }
+
+      .table__arrow {
+        cursor: pointer;
+        width: 22px;
+        min-width: 22px;
+        height: 22px;
+        min-height: 22px;
+        box-sizing: border-box;
+        display: block;
+      }
+    }
+
+    .table__empty-table {
+      width: 100%;
+      height: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9b9b9b;
+    }
+  }
+
+  .table__load-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      0deg,
+      rgba(51, 51, 51, 0.2),
+      rgba(51, 51, 51, 0.2)
+    );
+    border-radius: 12px 12px 0 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .table__paginator {
+    width: 100%;
+  }
+}

@@ -10,6 +10,7 @@ import { HomeLayoutComponent } from './layouts/home-layout/home-layout.component
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent, HomeLayoutComponent, AuthLayoutComponent],
@@ -19,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserAnimationsModule,
     MatSidenavModule,
     MatIconModule,
+    SharedModule
   ],
   providers: [NotAuthorizedGuard, AuthorizedGuard],
   bootstrap: [AppComponent],

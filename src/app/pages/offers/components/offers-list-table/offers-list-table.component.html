@@ -1,1 +1,113 @@
-<p>offers-list-table works!</p>
+<div class="table__paginator-container offers-table">
+  <div class="offers-table__container table__container">
+    <table class="table" mat-table [dataSource]="tableData">
+      <ng-container matColumnDef="id">
+        <th
+          class="table__column-header offers-table__col-1"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          ID
+        </th>
+        <td
+          class="table__column-content offers-table__col-1"
+          mat-cell
+          *matCellDef="let element"
+        >
+          <p class="selected-text">{{ element.id }}</p>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="title">
+        <th
+          class="table__column-header offers-table__col-1"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Title
+        </th>
+        <td
+          class="table__column-content offers-table__col-1"
+          mat-cell
+          *matCellDef="let element"
+        >
+          <p class="selected-text">{{ element.title }}</p>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="website">
+        <th
+          class="table__column-header offers-table__col-1"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Website
+        </th>
+        <td
+          class="table__column-content offers-table__col-1"
+          mat-cell
+          *matCellDef="let element"
+        >
+          <p class="selected-text">{{ element.website }}</p>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="payment">
+        <th
+          class="table__column-header offers-table__col-1"
+          mat-header-cell
+          *matHeaderCellDef
+        >
+          Payment
+        </th>
+        <td
+          class="table__column-content offers-table__col-1"
+          mat-cell
+          *matCellDef="let element"
+        >
+          <p class="selected-text">{{ element.payment }}</p>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="buttons">
+        <th
+          class="table__column-header offers-table__col-4"
+          mat-header-cell
+          *matHeaderCellDef
+        ></th>
+        <td
+          class="table__column-content offers-table__col-4"
+          mat-cell
+          *matCellDef="let element"
+        >
+          <p class="selected-text">
+            <button
+              mat-icon-button
+              disableRipple
+              (click)="deleteOffer(element.id)"
+            >
+              <mat-icon svgIcon="trash-can"></mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              disableRipple
+              (click)="updateOffer(element.id)"
+            >
+              <mat-icon class="table-icon" svgIcon="edit"></mat-icon>
+            </button>
+          </p>
+        </td>
+      </ng-container>
+
+      <tr
+        class="table__table-row-header"
+        mat-header-row
+        *matHeaderRowDef="displayedColumns"
+      ></tr>
+      <tr
+        class="table__table-row"
+        mat-row
+        *matRowDef="let row; columns: displayedColumns"
+      ></tr>
+    </table>
+
+    <p class="table__empty-table" *ngIf="!tableData?.length">Table is empty</p>
+  </div>
+</div>

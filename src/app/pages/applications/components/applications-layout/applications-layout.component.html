@@ -1,1 +1,19 @@
-<p>applications-layout works!</p>
+<header class="applications-list-layout__header">
+  <h3 class="applications-heading__title">Applications</h3>
+  <div class="applications-list-layout__header-container">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="createUpdateApplicationModal()"
+    >
+      Create applications
+    </button>
+  </div>
+</header>
+<main>
+  <app-applications-list-table
+    [tableData]="tableData"
+    (updateApplicationById)="updateApplicationById($event)"
+    (deleteApplicationById)="deleteApplicationById($event)"
+  ></app-applications-list-table>
+</main>

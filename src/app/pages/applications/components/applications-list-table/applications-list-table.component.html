@@ -1,9 +1,9 @@
-<div class="table__paginator-container offers-table">
-  <div class="offers-table__container table__container">
+<div class="table__paginator-container applications-table">
+  <div class="applications-table__container table__container">
     <table class="table" mat-table matSort [dataSource]="dataSource">
       <ng-container matColumnDef="id">
         <th
-          class="table__column-header offers-table__col-1"
+          class="table__column-header applications-table__col-1"
           mat-header-cell
           mat-sort-header
           *matHeaderCellDef
@@ -11,7 +11,7 @@
           ID
         </th>
         <td
-          class="table__column-content offers-table__col-1"
+          class="table__column-content applications-table__col-1"
           mat-cell
           *matCellDef="let element"
         >
@@ -20,7 +20,7 @@
       </ng-container>
       <ng-container matColumnDef="title">
         <th
-          class="table__column-header offers-table__col-1"
+          class="table__column-header applications-table__col-1"
           mat-header-cell
           mat-sort-header
           *matHeaderCellDef
@@ -28,57 +28,94 @@
           Title
         </th>
         <td
-          class="table__column-content offers-table__col-1"
+          class="table__column-content applications-table__col-1"
           mat-cell
           *matCellDef="let element"
         >
           <p class="selected-text">{{ element.title }}</p>
         </td>
       </ng-container>
-      <ng-container matColumnDef="website">
+
+      <ng-container matColumnDef="linkToCampaigns">
         <th
-          class="table__column-header offers-table__col-1"
+          class="table__column-header applications-table__col-1"
           mat-header-cell
           mat-sort-header
           *matHeaderCellDef
         >
-          Website
+          Link to campaing
         </th>
         <td
-          class="table__column-content offers-table__col-1"
+          class="table__column-content applications-table__col-1"
           mat-cell
           *matCellDef="let element"
         >
-          <p class="selected-text">{{ element.website }}</p>
+          <p class="selected-text">{{ element.linkToCampaigns }}</p>
         </td>
       </ng-container>
-      <ng-container matColumnDef="payment">
+
+      <ng-container matColumnDef="description">
         <th
-          class="table__column-header offers-table__col-1"
+          class="table__column-header applications-table__col-1"
           mat-header-cell
           mat-sort-header
           *matHeaderCellDef
         >
-          Payment
+          Description
         </th>
         <td
-          class="table__column-content offers-table__col-1"
+          class="table__column-content applications-table__col-1"
           mat-cell
           *matCellDef="let element"
         >
-          <p class="selected-text">{{ element.payment }}</p>
+          <p class="selected-text">{{ element.description }}</p>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="version">
+        <th
+          class="table__column-header applications-table__col-1"
+          mat-header-cell
+          mat-sort-header
+          *matHeaderCellDef
+        >
+          Version
+        </th>
+        <td
+          class="table__column-content applications-table__col-1"
+          mat-cell
+          *matCellDef="let element"
+        >
+          <p class="selected-text">{{ element.version }}</p>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="isActive">
+        <th
+          class="table__column-header applications-table__col-1"
+          mat-header-cell
+          mat-sort-header
+          *matHeaderCellDef
+        >
+          Is active
+        </th>
+        <td
+          class="table__column-content applications-table__col-1"
+          mat-cell
+          *matCellDef="let element"
+        >
+          <p class="selected-text">{{ element.isActive }}</p>
         </td>
       </ng-container>
 
       <ng-container matColumnDef="buttons">
         <th
-          class="table__column-header offers-table__col-4"
+          class="table__column-header applications-table__col-4"
           mat-header-cell
-          mat-sort-header
           *matHeaderCellDef
         ></th>
         <td
-          class="table__column-content offers-table__col-4"
+          class="table__column-content applications-table__col-4"
           mat-cell
           *matCellDef="let element"
         >
@@ -86,14 +123,14 @@
             <button
               mat-icon-button
               disableRipple
-              (click)="deleteOffer(element.id)"
+              (click)="deleteApplication(element.id)"
             >
               <mat-icon svgIcon="trash-can"></mat-icon>
             </button>
             <button
               mat-icon-button
               disableRipple
-              (click)="updateOffer(element.id)"
+              (click)="updateApplication(element.id)"
             >
               <mat-icon class="table-icon" svgIcon="edit"></mat-icon>
             </button>

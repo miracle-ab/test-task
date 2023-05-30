@@ -40,10 +40,10 @@ const routes: Routes = [
           import('./pages/offers/offers.module').then((m) => m.OffersModule),
       },
       {
-        path: ROUTES.CATEGORIES_ROUTH,
+        path: ROUTES.CAMPAIGN_ROUTH,
         loadChildren: () =>
-          import('./pages/categories/categories.module').then(
-            (m) => m.CategoriesModule
+          import('./pages/campaign/campaign.module').then(
+            (m) => m.CampaignModule
           ),
       },
       {

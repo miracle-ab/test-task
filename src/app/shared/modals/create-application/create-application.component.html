@@ -1,0 +1,72 @@
+<app-modal-wrapper>
+  <span class="create-application_title" modal_headline>{{
+    this.data?.applicationSingleItem ? "Update application" : data.headlineName
+  }}</span>
+
+  <div class="create-application_container">
+    <h3 class="create-application_headline">
+      {{
+        this.data?.applicationSingleItem
+          ? "Update application"
+          : data.headlineName
+      }}
+    </h3>
+
+    <form [formGroup]="applicationForm" (ngSubmit)="createUpdateApplication()">
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" formControlName="title" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Link to campaing</mat-label>
+        <mat-select formControlName="linkToCampaigns" ngDefaultControl>
+          <mat-option
+            *ngFor="let campaing of data?.campaigns"
+            [value]="campaing.id"
+            >{{ campaing.title }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Is active</mat-label>
+        <mat-select formControlName="isActive" ngDefaultControl>
+          <mat-option *ngFor="let value of isActiveValues" [value]="value">{{
+            value
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput type="text" formControlName="description"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Version</mat-label>
+        <input matInput type="number" formControlName="version" min="0" />
+      </mat-form-field>
+
+      <button
+        class="create-application_btn"
+        mat-raised-button
+        type="submit"
+        color="primary"
+        [disabled]="applicationForm.invalid"
+      >
+        {{ this.data?.applicationSingleItem ? "Update" : data.saveBtnName }}
+      </button>
+
+      <button
+        class="create-application_btn"
+        mat-raised-button
+        type="button"
+        color="warn"
+        (click)="closeModal()"
+      >
+        Cancel
+      </button>
+    </form>
+  </div>
+</app-modal-wrapper>

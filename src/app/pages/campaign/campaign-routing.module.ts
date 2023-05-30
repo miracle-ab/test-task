@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ROUTES } from 'src/app/core/constants/router-list';
-import { ApplicationsLayoutComponent } from './components/applications-layout/applications-layout.component';
+import { CampaignLayoutComponent } from './components/campaign-layout/campaign-layout.component';
 
 const routes: Routes = [
   {
     path: ROUTES.MAIN_ROUTH,
-    component: ApplicationsLayoutComponent,
+    component: CampaignLayoutComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class ApplicationsRoutingModule {}
+export class CampaignRoutingModule { }

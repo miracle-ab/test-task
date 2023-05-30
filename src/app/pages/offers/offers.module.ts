@@ -7,6 +7,7 @@ import { OffersListTableComponent } from './components/offers-list-table/offers-
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [OffersLayoutComponent, OffersListTableComponent],
@@ -16,6 +17,7 @@ import { MatTableModule } from '@angular/material/table';
     MatButtonModule,
     MatTableModule,
     MatIconModule,
+    MatSortModule
   ],
 })
 export class OffersModule {}

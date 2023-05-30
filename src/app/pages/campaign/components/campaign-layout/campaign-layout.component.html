@@ -1,0 +1,19 @@
+<header class="campaign-list-layout__header">
+  <h3 class="campaign-heading__title">Campaign</h3>
+  <div class="campaign-list-layout__header-container">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="createUpdateCampaignModal()"
+    >
+      Create campaign
+    </button>
+  </div>
+</header>
+<main>
+  <app-campaign-list-table
+    [tableData]="tableData"
+    (updateCampaignById)="updateCampaignById($event)"
+    (deleteCampaignById)="deleteCampaignById($event)"
+  ></app-campaign-list-table>
+</main>

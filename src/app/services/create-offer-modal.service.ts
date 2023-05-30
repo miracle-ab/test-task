@@ -9,7 +9,6 @@ import { LocalStorageWorkerService } from './local-storage-worker.service';
   providedIn: 'root',
 })
 export class CreateOfferModalService {
-  private language: any;
 
   constructor(
     private dialog: MatDialog,

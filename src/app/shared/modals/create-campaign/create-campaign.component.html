@@ -1,0 +1,49 @@
+<app-modal-wrapper>
+  <span class="create-campaign_title" modal_headline>{{
+    this.data?.campaignSingleItem ? "Update campaign" : data.headlineName
+  }}</span>
+
+  <div class="create-campaign_container">
+    <h3 class="create-campaign_headline">
+      {{
+        this.data?.campaignSingleItem ? "Update campaign" : data.headlineName
+      }}
+    </h3>
+
+    <form [formGroup]="campaignForm" (ngSubmit)="createUpdateCampaign()">
+      <mat-form-field appearance="fill">
+        <mat-label>Title</mat-label>
+        <input matInput type="text" formControlName="title" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Links to offers</mat-label>
+        <mat-select formControlName="linkToOffers" ngDefaultControl multiple>
+          <mat-option *ngFor="let offer of data?.offers" [value]="offer.id">{{
+            offer.title
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button
+        class="create-campaign_btn"
+        mat-raised-button
+        type="submit"
+        color="primary"
+        [disabled]="campaignForm.invalid"
+      >
+        {{ this.data?.campaignSingleItem ? "Update" : data.saveBtnName }}
+      </button>
+
+      <button
+        class="create-campaign_btn"
+        mat-raised-button
+        type="button"
+        color="warn"
+        (click)="closeModal()"
+      >
+        Cancel
+      </button>
+    </form>
+  </div>
+</app-modal-wrapper>

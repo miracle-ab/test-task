@@ -9,26 +9,30 @@ import {
 } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { OffersDetailsInterface } from 'src/app/core/interfaces/offers-details.interface';
+import { ApplicationsDetailsInterface } from 'src/app/core/interfaces/applications-details.interface';
 import { RegistrationIconService } from 'src/app/services/registration-icon.service';
 
 @Component({
-  selector: 'app-offers-list-table',
-  templateUrl: './offers-list-table.component.html',
+  selector: 'app-applications-list-table',
+  templateUrl: './applications-list-table.component.html',
   styleUrls: [
-    './offers-list-table.component.scss',
+    './applications-list-table.component.scss',
     '../../../../styles/table.scss',
   ],
 })
-export class OffersListTableComponent implements OnInit {
-  @Input() tableData: OffersDetailsInterface[] = [];
-  @Output() updateOfferById: EventEmitter<number> = new EventEmitter<number>();
-  @Output() deleteOfferById: EventEmitter<number> = new EventEmitter<number>();
+export class ApplicationsListTableComponent implements OnInit {
+  @Input() tableData: ApplicationsDetailsInterface[] = [];
+  @Output() updateApplicationById: EventEmitter<number> =
+    new EventEmitter<number>();
+  @Output() deleteApplicationById: EventEmitter<number> =
+    new EventEmitter<number>();
   public displayedColumns: string[] = [
     'id',
     'title',
-    'website',
-    'payment',
+    'isActive',
+    'linkToCampaigns',
+    'description',
+    'version',
     'buttons',
   ];
 
@@ -58,11 +62,11 @@ export class OffersListTableComponent implements OnInit {
     }
   }
 
-  public updateOffer(offerId: number): void {
-    this.updateOfferById.emit(offerId);
+  public updateApplication(ApplicationId: number): void {
+    this.updateApplicationById.emit(ApplicationId);
   }
 
-  public deleteOffer(offerId: number): void {
-    this.deleteOfferById.emit(offerId);
+  public deleteApplication(ApplicationId: number): void {
+    this.deleteApplicationById.emit(ApplicationId);
   }
 }

@@ -3,6 +3,6 @@ export const ROUTES = {
   AUTH_ROUTH: 'auth',
   LOGIN_ROUTH: 'login',
   OFFERS_ROUTH: 'offers',
-  CATEGORIES_ROUTH: 'categories',
+  CAMPAIGN_ROUTH: 'campaign',
   APPLICATIONS_ROUTH: 'applications',
 };

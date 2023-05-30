@@ -12,10 +12,10 @@
       </li>
       <li
         class="home-layout__menu-item"
-        [routerLink]="['/' + ROUTES.CATEGORIES_ROUTH]"
-        [class.active]="isActiveRoute(ROUTES.CATEGORIES_ROUTH)"
+        [routerLink]="['/' + ROUTES.CAMPAIGN_ROUTH]"
+        [class.active]="isActiveRoute(ROUTES.CAMPAIGN_ROUTH)"
       >
-        Categories
+        Campaign
       </li>
       <li
         class="home-layout__menu-item"
@@ -25,14 +25,6 @@
         Applications
       </li>
     </ul>
-
-    <p class="home-layout__menu-name">Settings</p>
-    <!-- <ul class="home-layout__menu">
-      <li class="home-layout__menu-item logout-menu-item" (click)="logout()">
-        <mat-icon class="home-layout__image"></mat-icon>
-        Logout
-      </li>
-    </ul> -->
   </mat-drawer>
   <mat-drawer-content class="home-layout__drawer-content">
     <router-outlet></router-outlet>
